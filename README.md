@@ -7,7 +7,7 @@ Install it yourself as:
 
     $ sudo gem install json_compacker
 
-On Mac you need set the install path to local for the special feature on Mac
+On Mac you may need(depend on how to install ruby) set the install path to local for the special feature on Mac
 
     $ sudo gem install -n /usr/local/bin json_compacker
 
@@ -20,24 +20,30 @@ json_compacker -s src_json_path -o output_file
 every json will compack into a single file with a key-value which key is the filename and value is origin json object.
 
 ## Example
-in the src path,  test path have
-a.json: 
+in the src path, test path have  
+a.json:   
+```json
 {
   "a": 1
 }
+```
 
-b.json: 
+b.json:   
+```json
 {
   "b": "b"
 }
+```
 
-c.json:
+c.json:  
+```json
 {
   "c" : [1,2,3],
   "d" : "d"
 }
+```
 
-output is:(compacked without space)
+output is:(compacked without space)  
 {"a":{"a":1},"b":{"b":"b"},"c":{"c":[1,2,3],"d":"d"}}
 
 
