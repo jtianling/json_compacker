@@ -3,25 +3,43 @@ compack multiple json files into one, for the loading speed
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it yourself as:
 
-```ruby
-gem 'json_compacker'
-```
+    $ sudo gem install json_compacker
 
-And then execute:
+On Mac you need set the install path to local for the special feature on Mac
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install json_compacker
+    $ sudo gem install -n /usr/local/bin json_compacker
 
 ## Usage
 
 ```ruby
-json_compacker -p src_json_path -o output_file
+json_compacker -s src_json_path -o output_file
 ```
+
+every json will compack into a single file with a key-value which key is the filename and value is origin json object.
+
+## Example
+in the src path,  test path have
+a.json: 
+{
+  "a": 1
+}
+
+b.json: 
+{
+  "b": "b"
+}
+
+c.json:
+{
+  "c" : [1,2,3],
+  "d" : "d"
+}
+
+output is:(compacked without space)
+{"a":{"a":1},"b":{"b":"b"},"c":{"c":[1,2,3],"d":"d"}}
+
 
 ## Development
 
@@ -33,6 +51,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jtianling/json_compacker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 
